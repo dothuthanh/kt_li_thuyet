@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let canvas = document.getElementById("myCanvas");
+    let ctx = canvas.getContext("2d");
+    function Cricle(x,y,radius,color) {
+        this.x = x;
+        this.y = y;
+        this.radius = radius;
+        this.color = color;
+        this.render = function () {
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
+            ctx.fillStyle = this.color;
+            this.fill();
+            ctx.closePath();
+        }
+    }
+    let cricle = new Cricle(10,10,100,"#000000");
+    cricle.render();
+
+</script>
+<canvas id="myCanvas" width="600" height="500" style="border: 1px red solid"></canvas>
+</body>
+</html>
